@@ -5,6 +5,7 @@ import com.shubham.backend.service.user.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,12 +19,6 @@ public class ProductsUserController {
     @Qualifier("userProductsService")
     private ProductsService productsService;
 
-    // This controller will handle user-specific product operations
-    // For example, viewing products, searching products, etc.
-
-    // Add methods for user-specific product operations here
-    // e.g., getAllProducts, getProductById, searchProducts, etc.
-
     // Example method (to be implemented):
      @GetMapping("/all")
      public List<ProductResponse> getAllProducts() {
@@ -31,7 +26,7 @@ public class ProductsUserController {
      }
 
      @GetMapping("/search/{name}")
-    public List<ProductResponse> searchProducts(String name) {
+    public List<ProductResponse> searchProducts(@PathVariable String name) {
         return productsService.searchProducts(name.trim());
     }
 

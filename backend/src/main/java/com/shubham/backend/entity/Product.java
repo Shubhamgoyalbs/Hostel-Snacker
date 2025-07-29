@@ -39,6 +39,6 @@ public class Product {
     private String imageUrl;
 
     @OneToMany(mappedBy = "product")
-    private Set<com.shubham.backend.entity.UserProduct> userProducts = new LinkedHashSet<>();
+    private Set<UserProduct> userProducts = new LinkedHashSet<>();
 
 }
