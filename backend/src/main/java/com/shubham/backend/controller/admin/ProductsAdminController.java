@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/api/admin/products")
 public class ProductsAdminController {
 
-    private ProductsService productsService;
+    private final ProductsService productsService;
 
     @Autowired
     public ProductsAdminController(@Qualifier("adminProductsService") ProductsService productsService) {
